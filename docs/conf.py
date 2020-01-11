@@ -23,13 +23,13 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'Qiita-GNPS-workshop'
-copyright = u'2017, Knight and Dorrestein Labs, UCSD'
+project = u'Qiita analysis tutorial'
+copyright = u'2017, Knight and Dorrestein Labs, UCSD; 2020, Tomasz Kosciolek, MCB UJ'
 
 # The short X.Y version.
-version = '0.01'
+version = '0.2'
 # The full version, including alpha/beta/rc tags.
-release = '0.01'
+release = '0.2'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

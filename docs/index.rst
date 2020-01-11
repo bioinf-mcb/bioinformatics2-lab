@@ -1,16 +1,21 @@
-CMI Qiita/GNPS workshop
-=======================
+BIOINFORMATICS II lab microbiome tutorial
+=========================================
 
-Materials below are intended for CMI Qiita/GNPS workshop participants.
-They include all information covered during days 1 and 2 of the workshop.
+Materials below are intended for JU Bioinformatics 2
+They include all information covered during the lab session.
 
 For more information on Qiita, including Qiita philosophy and documentation,
 please visit `Qiita website <https://qiita.ucsd.edu/static/doc/html/index.html>`__.
 
-A description of many of the terms used in this tutorial can be found in this `glossary <https://qiita.ucsd.edu/static/doc/html/glossary.html>`_
+A description of many of the terms used in this tutorial can be found in this `glossary <https://qiita.ucsd.edu/static/doc/html/glossary.html>`__.
 
-For general information about workshops, please visit the `Center for Microbiome Innovtion website <http://cmi.ucsd.edu/news-events>`__ or
-`contact the CMI directly <mailto:CMIinfo@eng.ucsd.edu>`__.
+This tutorial is adapted from the `University of California San Diego Center for Microbiome Innovation (CMI) Qiita/GNPS workshop <https://cmi-workshop.readthedocs.io/en/latest/>`__.
+You can find more information on the CMI `here <http://cmi.ucsd.edu>`__.
+
+For more comprhensive tutorial on Qiita, please visit the CMI-workshop website.  
+More advanced tutorials in QIIME 2 are available on the `QIIME 2 website <https://docs.qiime2.org/2019.10/tutorials/>`__.
+
+If you have questions about this material, please `contact Tomasz Kosciolek <mailto:tomasz.kosciolek@uj.edu.pl>`__.
 
 Qiita tutorials:
 ================
@@ -32,24 +37,3 @@ Qiita tutorials:
    :maxdepth: 2
 
    qiita-16S-analysis
-      
-.. toctree::
-   :caption: Microbiome data processing II
-   :maxdepth: 2
-   
-   qiita-shotgun-metagenomics-processing
-   
-.. toctree::
-   :caption: Microbiome analysis II
-   :maxdepth: 2
-   
-   qiita-shotgun-metagenomics-analysis
-
-.. toctree::
-   :caption: Metabolomic analyses
-   :maxdepth: 2
-   
-   metabolomics_notes
-   metabolomics_mzmine2
-   metabolomics_demo
-   metabolomics_gnps

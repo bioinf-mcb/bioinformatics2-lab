@@ -1,6 +1,7 @@
-CMI Qiita/GNPS workshop tutorials
-=================================
+BIOINFORMATICS II microbiome lab tutorial
+=========================================
 
-This repository contains materials for the Center for Microbiome Innovation (CMI)
-Qiita/GNPS workshop. It is designed to teach non-experts about microbiome
-and metabolomic data, and to familiarize them with basic computational analyses.
+This repository contains materials for the Małopolska Centre of Biotechnology
+Bioinformatics II course microbiome lab tutorial.
+It is designed to teach graduate level students the basics of microbiome data,
+and to familiarize them with basic computational analyses.

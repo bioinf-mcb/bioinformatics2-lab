@@ -6,6 +6,10 @@ To create an analysis, select "Create new analysis" from the top menu.
 This will take you to a list of studies with samples available to you for
 analysis, divided between your studies and publicly available studies ("Public Studies").
 
+.. admonition:: Question
+    
+    Testing out how to embed questions.
+
 .. figure::  images/analysis_studies_page3.png
    :align:   center
 

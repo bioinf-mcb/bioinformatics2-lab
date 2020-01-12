@@ -228,7 +228,7 @@ Click the run button to start the process of the beta diversity analysis. The vi
 .. admonition:: Question
 
     Is there a scenario in which unweighted UniFrac value can be < 0?
-    Which of the two distance metrics used produces more homogenous results (eg. smaller vairance)?
+    Which of the two distance metrics used produces more homogenous results (eg. smaller variance)?
 
 Principal Coordinate Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

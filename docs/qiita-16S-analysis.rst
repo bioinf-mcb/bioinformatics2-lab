@@ -78,7 +78,7 @@ An appropriate cutoff would exclude clear outliers, but retain most of the sampl
 
 To rarefy the data, select "Rarefy table" from the drop-down menu. The parameters will appear below the workflow diagram:
 
-.. figure::  images/rarify_parameter.png
+.. figure::  images/rarefy_parameter.png
    :align:   center
 
 Several parameters will have only one option which will be automatically selected for you. In the field, "The total frequency that each sample should be rarefied to...(sampling depth)", we will specify the number of features to rarefy our samples to. Enter "11030" in this box, and click "Add Command".
@@ -165,6 +165,10 @@ You will also be given the outcomes to Kruskal-Wallis tests:
 
 .. figure::  images/Kruskal_Wallis.png
    :align:   center
+
+.. admonition:: Question
+    
+    Do not follow this
 
 Beta Diversity Analysis
 -----------------------

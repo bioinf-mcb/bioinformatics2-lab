@@ -1,7 +1,7 @@
 BIOINFORMATICS II lab microbiome tutorial
 =========================================
 
-Materials below are intended for JU Bioinformatics 2
+Materials below are intended for Jagiellonian University Bioinformatics 2 course.
 They include all information covered during the lab session.
 
 For more information on Qiita, including Qiita philosophy and documentation,

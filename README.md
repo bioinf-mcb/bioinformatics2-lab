@@ -1,4 +1,4 @@
-BIOINFORMATICS II microbiome lab tutorial
+BIOINFORMATICS II lab microbiome tutorial
 =========================================
 
 This repository contains materials for the Małopolska Centre of Biotechnology

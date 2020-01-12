@@ -167,6 +167,7 @@ You will also be given the outcomes to Kruskal-Wallis tests:
    :align:   center
 
 .. admonition:: Question
+
     Which alpha diversity metric produces a higher between-subject effect size?
 
 Beta Diversity Analysis
@@ -225,6 +226,7 @@ All of the parameters have been automatically selected for you just click "Add C
 Click the run button to start the process of the beta diversity analysis. The view will return to the original screen, while the beta diversity analysis job runs.
 
 .. admonition:: Question
+
     Is there a scenario in which unweighted UniFrac value can be < 0?
     Which of the two distance metrics used produces more homogenous results (eg. smaller vairance)?
 
@@ -299,6 +301,7 @@ Under "Category to sort samples" you can choose the category that you will be so
 Let’s take a few minutes now to explore the various features of Emperor. Open a new browser window with the `Emperor tutorial <https://biocore.github.io/emperor/tutorial_index.html#section1>`__ and follow along with your test data.
 
 .. admonition:: Question
+
     From the unweighted UniFrac PCoA plot, what is the main driver of bacterial community separation, subject (`host_subject_id`), body side (`side`), or phase of the experiment (`phase_discreet`)?
     Is the same true for Bray-Curtis results?
 
@@ -347,6 +350,7 @@ The command 'Beta diversity group significance' provides PERMANOVA that can be r
 .. _referencefiltering:
 
 .. admonition:: NOTE
+
     The sections below are **optional**. You can do them only if you have the time.
 
 Filtering Data

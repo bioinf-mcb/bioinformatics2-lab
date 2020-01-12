@@ -2,12 +2,17 @@
 This tutorial will walk you through creation of your account and a test study
 in Qiita.
 
-Getting CMI Workshop example data
----------------------------------
+Getting example data
+--------------------
 
 There are two separate example datasets made available to you - a *processing dataset* containing raw sequencing files which we will process to generate information
 about the identity and relative amounts of microbes in our samples (n=14), and an *analysis dataset* which contains a unique set of pre-processed samples (n=30) which we will use
-for statistical and community analyses.
+for statistical and community analyses.  
+
+.. admonition:: NOTE
+    
+    During this lab we are only going to perform the analysis step. Processing information in included only for background and context.  
+
 
 Processing dataset
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,7 +87,7 @@ bar to access the page on which you can perform these tasks.
   :align:   center
 
 Studies in Qiita
----------------------
+----------------
 
 Studies are the source of data for Qiita. Studies can contain only one set
 of samples but can contain multiple sets of raw data, each of which can have a
@@ -92,7 +97,11 @@ metabolomics, or even multiple preparations of the same type
 
 In the *analysis tutorial*, our study contains 30 samples, each with two types of data:
 16S and metabolomic. To represent this project in Qiita, we created a single study with a single sample information file that contains all
-30 samples. Then, we linked separate preparation files for each data type.
+30 samples. Then, we linked separate preparation files for each data type.  
+
+.. admonition:: NOTE
+    
+    You may skip the remainder of this section and proceed to :doc:`qiita-16S-analysis`  
 
 Creating an example study
 -------------------------

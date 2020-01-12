@@ -1,3 +1,8 @@
+.. admonition:: NOTE
+    
+    Do not follow this section during the Bioinformatics 2 lab. Go directly to :doc:`qiita-16S-analysis`.
+    This information is included here for context and everyone is encouraged to familiarize themselves with it **after class**.  
+
 Now, we'll upload some actual microbiome data to explore. To do this, we need
 to add the data themselves, along with some information telling Qiita
 about how those data were generated.

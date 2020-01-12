@@ -6,10 +6,6 @@ To create an analysis, select "Create new analysis" from the top menu.
 This will take you to a list of studies with samples available to you for
 analysis, divided between your studies and publicly available studies ("Public Studies").
 
-.. admonition:: Question
-    
-    Testing out how to embed questions.
-
 .. figure::  images/analysis_studies_page3.png
    :align:   center
 
@@ -56,7 +52,12 @@ Before we process the data, let's have a look at the summary of the contents of 
 .. figure::  images/summaryinfo.png
    :align:   center
 
-As you can see, this file contains 30 samples with roughly 36,000 features, in our case, picked-OTUs (or operational taxanomic unit).
+As you can see, this file contains 30 samples with roughly 36,000 features. The features in our case are OTUs (Operational Taxanomic Units), because the features were generated using the closed-reference OTU picking.
+
+.. admonition:: Question
+    
+    Are OTUs equivalent to bacterial species? Please, provide a justification to your answer.  
+    You may find the `Qiita glossary <https://qiita.ucsd.edu/static/doc/html/glossary.html>`__ useful.
 
 Now we can begin analyzing these samples. Let’s go ahead and select "dflt_name (BIOM)" then select “Process”. This will take us to the commands selection page. Once there, the commands pull down tab can be accessed which will display twenty-five actions.
 
@@ -66,7 +67,7 @@ Now we can begin analyzing these samples. Let’s go ahead and select "dflt_name
 The text in brackets is the actual underlying commands from QIIME2. We will now go through the use of some of the most-used commands which will enable you to generate summaries, plot your data, and calculate statistics to help you get the most out of your data.
 
 Rarefying Data
-~~~~~~~~~~~~~~
+--------------
 
 For certain analyses such as those we are about to conduct, the data should be *rarefied*. This means that all the samples in the analysis will have their features, in this case OTUs, randomly subsampled to the same, desired number, reducing potential alpha and beta diversity biases. Samples with fewer than this number of features will be excluded, which can also be useful for excluding things like blanks. To choose a good cutoff for your data, view the histogram that was made when we generated the summary of the data.
 
@@ -98,45 +99,19 @@ The view will return to the original screen, while the rarefied feature-table ge
 Select the newly generated "rarefied_table (BIOM)" artifact. This time instead of seeing a histogram of the rarefied samples, you instead see a brief summary confirming that your samples have all be rarefied to the same depth. Now that the data are rarefied, we can begin the analysis.
 
 Taxa Bar Plots
-~~~~~~~~~~~~~~
+--------------
 
-When creating a 16S closed-reference BIOM table in Qiita, each sequence is matched to the Greengenes database using a 97% sequence identity threshold, and assigned a taxonomy (See this section for a `refresher on 16S data <http://cmi-workshop.readthedocs.io/en/latest/qiita-16S-processing.html>`__). This enables us to display this data to view the percentage of each taxa within each sample.
-
-When using "Deblurred" data, there is no taxa assignment since features are kept as individual error-corrected sequences, so if you are referencing this tutorial with your own deblurred data you can skip to the next section "Alpha Diversity Analysis".
-
-To display the taxonomic profiles of our samples, we will select our rarefied table artifact, and click "Process". The same processing view we saw previously now appears, so click on "Visualize taxonomy with an interactive bar plot" from the drop-down menu to arrive at the following view:
-
-.. figure::  images/taxa_barplot_parameter4.png
-   :align:   center
-
-All of the parameters for this command are fixed so simply click "Add Comand" to continue. Once the command is added the workflow will appear:
-
-.. figure::  images/taxa_barplot_run4.png
-   :align:   center
-
-Click the run button to start the process. Once the "visualization (q2_visualization)" artifact is generated you should see this screen:
-
-.. figure::  images/taxa_barplot_workflow4.png
-   :align:   center
-
-Once the q2 visualization artifact is chosen in the network, the taxa barplot will appear below. The taxa plots offers visualization of the makeup of each sample. Each color will represent a different taxon and each column a different sample. It will have four pull-down menus: "Taxonomic Level," "Color Palette," and two "Sort Samples By" options.
-
-.. figure::  images/taxa_barplot2.png
-   :align:   center
-
-The "Taxonomic Level" menu allows you to view the taxa within your samples at different specificities. There are 7 level options: 1- Kingdom, 2- Phylum, 3- Class, 4- Order, 5- Genus, 6- Species, 7- Subspecies.
-
-The "Color Palette" menu allows you to change the coloring of your taxa barplot. You can select through “Discrete” palettes in which each taxa is a different color or “Continuous” palettes in which each taxa is a different shade of one color.
-
-The "Sort Sample By" menus allow you to sort your data either by sample metadata or taxonomic abundance and either by ascending or descending order.
+.. admonition:: NOTE
+    
+    Taxonomy is outside the scope of this lab session. However, if you are interested in this topic, you are encouraged to follow the `CMI Qiita/GNPS tutorial <https://cmi-workshop.readthedocs.io/en/latest/qiita-16S-analysis.html#taxa-bar-plots>`__ **afterwards**. 
 
 Alpha Diversity Analysis
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Now, let's analyze the alpha diversity of your samples. Alpha diversity metrics describe the diversity of features within a sample or a group of samples. This is used to analyze the diversity within rather than between samples or a group of samples.
 
 Observed Operational Taxonomic Units
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One type of analysis for alpha diversity, and the simplest, is looking at the number of observed, unique features, or OTUs in this example, also known as feature richness. This type of analysis will provide the number of unique OTUs found in a sample or group of samples.
 
@@ -154,24 +129,10 @@ Once the command is added the workflow should appear as follows:
 
 Click the run button to start the process of the alpha diversity analysis. The view will return to the original screen, while the alpha diversity analysis job runs.
 
-Shannon Diversity Index
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Another alpha diversity metric commonly used is the Shannon diversity index. In addition to feature richness, this metric considers the abundance of each taxon relative to the total abundance across all taxa in a sample. Therefore, this metric takes into account both feature richness and abundance.
-
-To perform an alpha diversity analysis using the Shannon diversity index, select the "rarefied table (BIOM)" artifact in the processing network and select "Process". Select "Alpha diversity" from the drop-down menu. The parameters will appear below the workflow diagram as previously. Also as before, several parameters have been automatically selected for you. In the field, "The alpha diversity metric... (metric)", select "Shannon's index" from the drop-down menu in this box, and click "Add Command".
-
-Once the command is added the workflow should appear as follows:
-
-.. figure::  images/shannon_diversity_workflow4.png
-   :align:   center
-
-Click the run button to start the process of the alpha diversity analysis. The view will return to the original screen, while the alpha diversity analysis job runs.
-
 Faith's Phylogenetic Diversity Index
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The final alpha diversity analysis in this tutorial uses Faith’s phylogenetic diversity index. This index also measured abundance and diversity but considers the phylogenetic distance spanning all features in a sample. The results can also be displayed as a phylogeny, rather than as a plot.
+Another alpha diversity analysis in this tutorial uses Faith’s phylogenetic diversity index. This index also measured abundance and diversity but considers the phylogenetic distance spanning all features in a sample. The results can also be displayed as a phylogeny, rather than as a plot.
 
 To perform an alpha diversity analysis using Faith's phylogenetic diversity index, select the "rarefid table (BIOM)" artifact in the processing network and select "Process". Select "Alpha diversity (phylogenetic)" from the drop-down menu. The parameters will appear below the workflow diagram:
 
@@ -188,7 +149,7 @@ Once the command is added the workflow should appear as follows:
 Click the run button to start the process of the alpha diversity analysis. The view will return to the original screen, while the alpha diversity analysis job runs.
 
 Alpha Diversity Outputs
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Each alpha diversity analysis will output an interactive boxplot that shows how that alpha diversity metric correlates with different metadata categories:
 
@@ -206,12 +167,12 @@ You will also be given the outcomes to Kruskal-Wallis tests:
    :align:   center
 
 Beta Diversity Analysis
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 One can also measure beta diversity in Qiita. Beta diversity measures feature turnover among samples (i.e., the diversity between samples rather than within each sample). This is used to compare samples to one another.
 
 Bray-Curtis Dissimilarity
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One commonly used beta diversity metric is Bray-Curtis dissimilarity. This metric quantifies how dissimilar samples are to one another.
 
@@ -237,7 +198,7 @@ Once the command is added the workflow should appear as follows:
 Click the run button to start the process of the beta diversity analysis. The view will return to the original screen, while the beta diversity analysis job runs.
 
 Unweighted UniFrac Analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Another commonly used distance metric for measuring beta diversity is unweighted UniFrac distance. *Unweighted* refers to that the metric considers only feature richness and not abundance, when comparing samples to one another. This differs from the weighted UniFrac distance metric, which takes into account both feature richness and abundance, for each sample.
 
@@ -261,7 +222,7 @@ All of the parameters have been automatically selected for you just click "Add C
 Click the run button to start the process of the beta diversity analysis. The view will return to the original screen, while the beta diversity analysis job runs.
 
 Principal Coordinate Analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clicking on the "pcoa (ordination_results)" (Principal Coordinate Analysis) artifact will open an interactive visualization of the similarity among your samples. Generally speaking, the more similar the samples with respect to their features, the closer the are likely to be in the PCoA ordination plot. The Emperor visualization program offers a very useful way to explore how patterns of similarity in your data associate with different metadata categories.
 
@@ -331,7 +292,7 @@ Under "Category to sort samples" you can choose the category that you will be so
 Let’s take a few minutes now to explore the various features of Emperor. Open a new browser window with the `Emperor tutorial <https://biocore.github.io/emperor/tutorial_index.html#section1>`__ and follow along with your test data.
 
 Beta Diversity Group Significance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Another way to study the beta diversity is by measuring the beta diversity group significance. Beta diversity group significance measures whether groups of samples are significantly different from one another using a permutation-based statistical test. Sample groups are designated by metadata variables.
 
@@ -355,7 +316,7 @@ Several parameters have been automatically selected for you. In the "Metadata co
 Click the run button to start the process of the beta diversity group significance analysis. The view will return to the original screen, while the beta diversity group significance analysis job runs.
 
 Beta Group Significance Output Analysis
-"""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the beta group significance "visualization (q2_visualization)" artifact is chosen in the network, the beta diversity group significance Overview, which in our case shows results from the PERMANOVA (i.e., across all groups) and Group significance plots will appear:
 
@@ -375,7 +336,7 @@ The command 'Beta diversity group significance' provides PERMANOVA that can be r
 .. _referencefiltering:
 
 Filtering Data
-~~~~~~~~~~~~~~
+--------------
 
 Using QIITA you can also filter your data. This allows you to filter out samples.
 
@@ -393,7 +354,7 @@ Click "Run" to execute the filtering process.
 An example of how you can use filtering in your analysis is explained in the following "Filtered Unweighted UniFrac Analysis" section.
 
 Filtered Unweighted UniFrac Analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 By filtering, you can perform unweighted UniFrac analysis but this time without certain sample.
 
@@ -417,7 +378,7 @@ All of the parameters have been automatically selected for you just click "Add C
 Click the run button to start the process of the beta diversity analysis. The view will return to the original screen, while the beta diversity analysis job runs.
 
 Altering Workflow Analysis Names
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 To alter the name of a result, click the artifact then use the edit button on the processing network page.
 
@@ -428,19 +389,3 @@ This will cause a window to pop-up where you can input the name you’d like to 
 
 .. figure::  images/rename_data_popup.png
    :align:   center
-
-Analysis of Deblur Processed Data
----------------------------------
-
-Creating an analysis of your deblurred data is virtually the same as the process for the Closed Reference data, but there are a few important differences to note.
-
-First, because the Deblur process creates two separate BIOM tables, you should make a note of the specific object ID number for the specific artifact you want to use. In my case, that’s ID 33331, the deblurred table with "only-16S" reads.
-
-.. figure::  images/Deblur_processing_screen.png
-   :align:   center
-
-The specific ID for your table will be unique. You can use it to select the correct table for analysis.
-
-Qiita employs Deblur on trimmed sequences (UC San Diego studies are typically processed with 90, 100, and 150 nt) with no minimum read threshold count, followed by insertion of output sequences into the latest (Aug 2013) 99% OTU tree from GreenGenes using SATÉ-Enabled Phylogenetic Placement (SEPP) as part of the QIIME2 `q2-fragment-insertion plugin <https://github.com/biocore/q2-fragment-insertion>`_.
-
-In addition, Deblur in Qiita uses a reduced threshold of 1 for sequence abundance across all samples, rather than the default value of 10 used in Deblur outside of Qiita. The single read threshold was chosen (rather than the default 10 read threshold) to support the best practice of setting a custom minimum read threshold that is suitable to your single-study analysis or meta-analysis. This can be done using the command, 'Filter features from table'.

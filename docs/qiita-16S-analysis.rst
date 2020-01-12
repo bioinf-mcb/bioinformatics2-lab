@@ -167,8 +167,7 @@ You will also be given the outcomes to Kruskal-Wallis tests:
    :align:   center
 
 .. admonition:: Question
-    
-    Do not follow this
+    Which alpha diversity metric produces a higher between-subject effect size?
 
 Beta Diversity Analysis
 -----------------------
@@ -224,6 +223,10 @@ All of the parameters have been automatically selected for you just click "Add C
    :align:   center
 
 Click the run button to start the process of the beta diversity analysis. The view will return to the original screen, while the beta diversity analysis job runs.
+
+.. admonition:: Question
+    Is there a scenario in which unweighted UniFrac value can be < 0?
+    Which of the two distance metrics used produces more homogenous results (eg. smaller vairance)?
 
 Principal Coordinate Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,6 +298,10 @@ Under "Category to sort samples" you can choose the category that you will be so
 
 Let’s take a few minutes now to explore the various features of Emperor. Open a new browser window with the `Emperor tutorial <https://biocore.github.io/emperor/tutorial_index.html#section1>`__ and follow along with your test data.
 
+.. admonition:: Question
+    From the unweighted UniFrac PCoA plot, what is the main driver of bacterial community separation, subject (`host_subject_id`), body side (`side`), or phase of the experiment (`phase_discreet`)?
+    Is the same true for Bray-Curtis results?
+
 Beta Diversity Group Significance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -338,6 +345,9 @@ The results from pairwise PERMANOVA tests will also be displayed if included in 
 The command 'Beta diversity group significance' provides PERMANOVA that can be run on a single categorical metadata variable. If you instead would like to provide multiple terms in the form of an equation, you can use the command 'adonis PERMANOVA test for beta group significance'. This latter command implements the 'adonis' function from the R package, vegan.
 
 .. _referencefiltering:
+
+.. admonition:: NOTE
+    The sections below are **optional**. You can do them only if you have the time.
 
 Filtering Data
 --------------
